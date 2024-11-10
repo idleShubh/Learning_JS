@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 30px;
+            padding: 0%;
+        }
+
+        body{
+            background: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #bulb{
+            background-color: rgb(29, 29, 29);
+            border-radius: 50%;
+            border: 2px white solid;
+            height: 200px;
+            width: 200px;
+        }
+
+        button{
+            padding: 20px;
+            width: 100px;
+            border-radius: 10px;
+            background: greenyellow;
+            border: 1px solid white;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML -->
+    <h1>Bulb</h1>
+    This is a simple program to help me learn DOM
+    <p>Click on the button to turn on the lights</p>
+    <div id="bulb"></div>
+    <button>ON</button>
+
+    <!-- js -->
+     <script>
+        var bd = document.querySelector("body")
+        var blb = document.querySelector("#bulb")
+        var btn = document.querySelector("button")
+        var para = document.querySelector("p")
+
+        // creating logic for switch on and off
+        var flag =0
+        
+        btn.addEventListener("click",function(){
+            if (flag ==0){
+                bd.style.backgroundColor = "white"
+                bd.style.color= "black"
+                blb.style.backgroundColor= "Yellow"
+                btn.style.backgroundColor= "red"
+                btn.innerHTML="OFF"
+                flag =1
+            }
+            else{
+                bd.style.backgroundColor = "black"
+                bd.style.color= "white"
+                blb.style.backgroundColor= "rgb(29, 29, 29)"
+                btn.style.backgroundColor= "greenyellow"
+                btn.innerHTML="ON"
+                flag=0
+            }
+        })
+     </script>
+</body>
+</html>
